@@ -11,18 +11,123 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: small;
+    font-weight: bold;
 }
 
 .nav-bar-tabs {
     display: flex;
     flex-direction: row;
     margin-left: 30px;
+    margin-top: 10px;
+}
+
+.today {
+    margin-right: 10px;
+    color: #c5c5c5;
+}
+
+.week {
+    color: #c5c5c5;
+}
+
+.today:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.week:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.today-active {
+    color: black;
+}
+
+.week-active {
+    color: black;
+}
+
+.celsius {
+    border-radius: 500px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    background-color: white;
+    font-weight: small;
+}
+
+.fahrenheit {
+    border-radius: 500px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    background-color: white;
+    font-weight: small;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.celsius:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.fahrenheit:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.celsius-active {
+    color: white;
+    background-color: black
+}
+
+.fahrenheit-active {
+    color: white;
+    background-color: black
+}
+
+.profile-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
+.underline {
+    width: 40px;
+    height: 1px;
+    background-color: black;
+    margin-top: 1.2em;
+}
+
+.underline-today {
+    transform: translate3d(-205%, 0, 0);
+    transition: 100ms;
+}
+
+.underline-week {
+    transform: translate3d(-90%, 0, 0);
+    transition: 100ms;
 }
 
 .nav-bar-metric {
     display: flex;
     flex-direction: row;
     margin-right: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 
