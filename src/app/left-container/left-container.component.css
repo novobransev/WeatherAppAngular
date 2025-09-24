@@ -87,6 +87,9 @@
 
 .left-container-day-time {
     flex: 1;
+    font-weight: 500;
+    color: black;
+    font-size: 15px;
 }
 
 
@@ -109,19 +112,39 @@
 }
 
 .left-container-location-details {
-    flex: 3;
+    flex: 4;
     text-align: center;
 }
 
 .left-container-location-img img{
-    width: 200px;
-    height: 80px;
+    width: 220px;
+    height: 120px;
     border-radius: 20px;
 }
 
 .left-container-location-name {
-    margin-top: -50px;
+    margin-top: -70px;
     font-size: medium;
     font-weight: bold;
     color: white;
+}
+
+.dividing-line {
+    height: 1px;
+    width: 100%;
+    background-color: #c6c6c6;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.left-container-temp-summary-phare-img {
+    margin-right: 8px;
+}
+
+.left-container-rain-stats-phare-img {
+    margin-right: 8px;
+}
+
+.left-container-day-time span {
+    color: #b7b7b7;
 }
