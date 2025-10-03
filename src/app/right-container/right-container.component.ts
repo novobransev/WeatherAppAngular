@@ -12,7 +12,11 @@ import { WeatherService } from '../Services/weather.service';
   styleUrl: './right-container.component.css'
 })
 export class RightContainerComponent {
-  constructor(public weatherService: WeatherService) {};
+  today:boolean = false;
+  week:boolean = true;
+
+  celsius:boolean = true;
+  fahrenheit:boolean = false;
 
   faThumbsUp:any = faThumbsUp;
   faThumbsDown:any = faThumbsDown;
@@ -20,23 +24,23 @@ export class RightContainerComponent {
   faFaceFrown:any = faFaceFrown;
 
   onTodayClick() {
-    this.weatherService.today = true;
-    this.weatherService.week = false;
+    this.today = true;
+    this.week = false;
   }
 
   onWeekClick() {
-    this.weatherService.today = false;
-    this.weatherService.week = true;
+    this.today = false;
+    this.week = true;
   }
 
   onCelsiusClick() {
-    this.weatherService.celsius = true;
-    this.weatherService.fahrenheit = false;
+    this.celsius = true;
+    this.fahrenheit = false;
   }
 
   onFahrenheitClick() {
-    this.weatherService.celsius = false;
-    this.weatherService.fahrenheit = true;
+    this.celsius = false;
+    this.fahrenheit = true;
   }
 
 
