@@ -75,8 +75,8 @@
       while(weekCount < 7) {
         this.weekData.push(new WeekData())
         this.weekData[weekCount].day = this.weatherDetails['v3-wx-forecast-daily-15day'].dayOfWeek[weekCount].slice(0, 3);
-        this.weekData[weekCount].tempMax = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMax[weekCount].toString();
-        this.weekData[weekCount].tempMin = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMin[weekCount].toString();
+        this.weekData[weekCount].tempMax = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMax[weekCount];
+        this.weekData[weekCount].tempMin = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMin[weekCount];
         this.weekData[weekCount].summaryImage = this.getSummaryImage(this.weatherDetails['v3-wx-forecast-daily-15day'].narrative[weekCount])
         weekCount++
       }
@@ -120,11 +120,11 @@
     }
 
     celciusToFahrenheit(celsuis: number) {
-      return (celsuis * 1.8) + 32;
+      return ((celsuis * 1.8) + 32).toFixed(2);
     }
 
     fahrenheitToCelcius(fahrenheit: number) {
-      return (fahrenheit - 32) * 0.555;
+      return ((fahrenheit - 32) * 0.555).toFixed(2);
     }
 
     getLocationDetails(cityName: string, language:string):Observable<LocationDetails>{

@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome'
 import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome/free-solid-svg-icons'
@@ -7,7 +7,7 @@ import { WeatherService } from '../Services/weather.service';
 
 @Component({
   selector: 'app-right-container',
-  imports: [NgIf, FaIconComponent],
+  imports: [NgIf, FaIconComponent, NgFor],
   templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.css'
 })
@@ -25,8 +25,8 @@ export class RightContainerComponent {
   }
 
   onWeekClick() {
-    this.weatherSerice.week = false;
-    this.weatherSerice.today = true;
+    this.weatherSerice.week = true;
+    this.weatherSerice.today = false;
   }
 
   onCelsiusClick() {
