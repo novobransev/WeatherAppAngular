@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome'
 import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome/free-solid-svg-icons'
+import { WeatherService } from '../Services/weather.service';
 
 
 @Component({
@@ -11,11 +12,7 @@ import { faThumbsUp, faThumbsDown, faFaceSmile, faFaceFrown } from '@fortawesome
   styleUrl: './right-container.component.css'
 })
 export class RightContainerComponent {
-  today:boolean = false;
-  week:boolean = true;
-
-  celsius:boolean = true;
-  fahrenheit:boolean = false;
+  constructor(public weatherSerice: WeatherService){};
 
   faThumbsUp:any = faThumbsUp;
   faThumbsDown:any = faThumbsDown;
@@ -23,23 +20,23 @@ export class RightContainerComponent {
   faFaceFrown:any = faFaceFrown;
 
   onTodayClick() {
-    this.today = true;
-    this.week = false;
+    this.weatherSerice.today = true;
+    this.weatherSerice.week = false;
   }
 
   onWeekClick() {
-    this.today = false;
-    this.week = true;
+    this.weatherSerice.week = false;
+    this.weatherSerice.today = true;
   }
 
   onCelsiusClick() {
-    this.celsius = true;
-    this.fahrenheit = false;
+    this.weatherSerice.celsius = true;
+    this.weatherSerice.fahrenheit = false;
   }
 
   onFahrenheitClick() {
-    this.celsius = false;
-    this.fahrenheit = true;
+    this.weatherSerice.celsius = false;
+    this.weatherSerice.fahrenheit = true;
   }
 
 

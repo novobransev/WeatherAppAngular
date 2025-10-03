@@ -6,25 +6,25 @@
     </div>
     <div class="left-container-data-box">
         <div class="left-container-temp-data">
-            <div class="left-container-temp-img"><img src="https://cdn-icons-png.flaticon.com/128/3093/3093390.png" alt=""></div>
-            <div class="left-container-temp-value">12<sup>°C</sup></div>
-            <div class="left-container-day-time">Monday, <span>16:00</span></div>
+            <div class="left-container-temp-img"><img src="{{ this.weatherService.temperatureData.summaryImage }}" alt=""></div>
+            <div class="left-container-temp-value">{{ this.weatherService.celsius == true ? this.weatherService.temperatureData.temperature : this.weatherService.celciusToFahrenheit(this.weatherService.temperatureData.temperature) }}<sup>{{ this.weatherService.celsius == true ? "°C" : "°F" }}</sup></div>
+            <div class="left-container-day-time">{{ this.weatherService.temperatureData.day }}, <span>{{ this.weatherService.temperatureData.time }}</span></div>
         </div>
 
         <div class="dividing-line"></div>
         <div class="left-container-other-details">
             <div class="left-container-temp-summary">
                 <div class="left-container-temp-summary-phare-img"><fa-icon style="color: rgb(55, 0, 253);" [icon]="faCloud"></fa-icon></div>
-                <div class="left-container-temp-summary-value">Mostly Cloudy</div>
+                <div class="left-container-temp-summary-value">{{ this.weatherService.temperatureData.SummaryPhrase }}</div>
             </div>
             <div class="left-container-rain-stats">
                 <div class="left-container-rain-stats-phare-img"><fa-icon style="color: rgb(55, 0, 253);" [icon]="faCloudRain"></fa-icon></div>
-                <div class="left-container-rain-stats-value">Rain - 30%</div>
+                <div class="left-container-rain-stats-value">Rain - {{ this.weatherService.temperatureData.rainPercent }}%</div>
             </div>
 
             <div class="left-container-location-details">
                 <div class="left-container-location-img"><img src="https://avatars.mds.yandex.net/get-mpic/3918703/2a0000018c2736d92e6438fbf504c1514f9b/orig" alt=""></div>
-                <div class="left-container-location-name">New York, NY, USA</div>
+                <div class="left-container-location-name">{{ this.weatherService.temperatureData.location }}</div>
             </div>
         </div>
     </div>

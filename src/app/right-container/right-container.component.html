@@ -1,19 +1,19 @@
 <div class="right-container">
     <div class="right-container-nav-bar">
         <div class="nav-bar-tabs">
-            <div class="today" (click)="onTodayClick()" [className]="today == true ? 'today today-active' : 'today' ">Today</div>
-            <div class="week" (click)="onWeekClick()" [className]="week == true ? 'week week-active' : 'week' ">Week</div>
-            <div class="underline" [className]="today == true ? 'underline underline-today' : 'underline underline-week' "></div>
+            <div class="today" (click)="onTodayClick()" [className]="this.weatherSerice.today == true ? 'today today-active' : 'today' ">Today</div>
+            <div class="week" (click)="onWeekClick()" [className]="this.weatherSerice.week == true ? 'week week-active' : 'week' ">Week</div>
+            <div class="underline" [className]="this.weatherSerice.today == true ? 'underline underline-today' : 'underline underline-week' "></div>
         </div>
 
         <div class="nav-bar-metric">
-            <div class="celsius" (click)="onCelsiusClick()" [className]="celsius == true ? 'celsius celsius-active' : 'celsius' ">°C</div>
-            <div class="fahrenheit" (click)="onFahrenheitClick()" [className]="fahrenheit == true ? 'fahrenheit fahrenheit-active' : 'fahrenheit' ">°F</div>
+            <div class="celsius" (click)="onCelsiusClick()" [className]="this.weatherSerice.celsius == true ? 'celsius celsius-active' : 'celsius' ">°C</div>
+            <div class="fahrenheit" (click)="onFahrenheitClick()" [className]="this.weatherSerice.fahrenheit == true ? 'fahrenheit fahrenheit-active' : 'fahrenheit' ">°F</div>
             <div class="profile-image"><img src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png" alt=""></div>
         </div>
     </div>
     <div class="right-container-data-box">
-        <div class="right-container-week-cards" *ngIf="week == true">
+        <div class="right-container-week-cards" *ngIf="this.weatherSerice.week == true">
             <div class="card">
                 <div class="card-day">Sun</div>
                 <div class="card-temp-img"><img src="https://cdn-icons-png.flaticon.com/128/146/146182.png" alt=""></div>
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="right-container-today-cards" *ngIf="today == true">
+        <div class="right-container-today-cards" *ngIf="this.weatherSerice.today == true">
             <div class="card">
                 <div class="card-day">12:00</div>
                 <div class="card-temp-img"><img src="https://cdn-icons-png.flaticon.com/128/146/146182.png" alt=""></div>
